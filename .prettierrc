@@ -1,0 +1,10 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "spaceBeforeFunctionParen": true,
+  "breakBeforeElse": true,
+  "arrayExpand": true,
+  "endOfLine": "auto",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+}

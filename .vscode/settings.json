@@ -1,0 +1,13 @@
+{
+    "cSpell.ignoreWords": [
+        "class",
+        "common",
+        "export",
+        "from",
+        "import",
+        "injectable",
+        "items",
+        "nestjs",
+        "service"
+    ]
+}
