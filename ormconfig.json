@@ -1,0 +1,15 @@
+{
+    "type": "mongodb",
+    "url": "mongodb+srv://erinayo:Lembers6A.@erinscluster.pdqer.mongodb.net/items?retryWrites=true&w=majority",
+    "authSource": "admin",
+    "migrations": ["src/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+    },
+    "synchronize": true,
+    "useNewUrlParser": true,
+    "useUnifiedTopology": true
+}
