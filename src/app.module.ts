@@ -1,12 +1,20 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ItemsModule } from './items/items.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import config from './configs/keys'
+import { Item } from './items/entity/item.entity';
+import { getConnectionOptions } from 'typeorm';
 
 @Module({
-  imports: [ItemsModule, MongooseModule.forRoot(config.mongoURI, config.options),],
+  imports: [ItemsModule,
+    TypeOrmModule.forRootAsync({
+      useFactory: async () => {
+        return Object.assign(await getConnectionOptions(), {
+          "entities": [Item]
+        })
+      }
+    }),],
   controllers: [AppController],
   providers: [AppService],
 })
