@@ -5,7 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ItemsController } from './items/items.controller';
 import { ItemsService } from './items/items.service';
-import config from './config/keys'
+import config from './configs/keys'
 
 @Module({
   imports: [ItemsModule, MongooseModule.forRoot(config.mongoURI, config.options),],
