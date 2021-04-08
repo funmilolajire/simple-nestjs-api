@@ -6,27 +6,27 @@ import { Item } from './entity/item.entity';
 @Injectable()
 export class ItemsService {
     constructor(@InjectRepository(Item) private itemRepository: Repository<Item>) { }
-    // private readonly pencil = {
-    //     name: "Pencil",
-    //     qty: 100,
-    //     description: "Used for writing and shit."
-    // }
-    // private readonly pen = {
-    //     name: "Pen",
-    //     qty: 50,
-    //     description: "Also used for writing and shit bruv!"
-    // }
-    // private readonly ink = {
-    //     name: "Ink",
-    //     qty: 5,
-    //     description: "Shit! I don't know, what do you think??"
-    // }
+    private readonly pencil = {
+        name: "Pencil",
+        qty: 100,
+        description: "Used for writing and shit."
+    }
+    private readonly pen = {
+        name: "Pen",
+        qty: 50,
+        description: "Also used for writing and shit bruv!"
+    }
+    private readonly ink = {
+        name: "Ink",
+        qty: 5,
+        description: "Shit! I don't know, what do you think??"
+    }
 
-    // async saveItems() {
-    //     await this.itemRepository.save(this.pen);
-    //     await this.itemRepository.save(this.pencil);
-    //     await this.itemRepository.save(this.ink);
-    // }
+    async saveItems() {
+        await this.itemRepository.save(this.pen);
+        await this.itemRepository.save(this.pencil);
+        await this.itemRepository.save(this.ink);
+    }
 
     async findAll(): Promise<Item[]> {
         // await this.saveItems();

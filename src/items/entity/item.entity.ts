@@ -1,7 +1,7 @@
 // import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 // import { Document } from 'mongoose';
 
-import { Entity, Column, ObjectIdColumn, ObjectID, VersionColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 // export type ItemDocument = Item & Document;
 
@@ -13,8 +13,8 @@ import { Entity, Column, ObjectIdColumn, ObjectID, VersionColumn } from 'typeorm
 
 @Entity()
 export class Item {
-    @ObjectIdColumn()
-    id: ObjectID
+    @PrimaryGeneratedColumn("uuid")
+    id: string
 
     @Column()
     name: string;
